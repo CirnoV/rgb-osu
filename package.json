@@ -1,15 +1,22 @@
 {
-  "name": "osu-json-parser",
+  "name": "rgb-osu",
   "version": "1.0.0",
   "repository": "https://github.com/CirnoV/rgb-osu",
   "author": "CirnoV <cirnov59@gmail.com>",
+  "main": "lib/index.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "bin": {
+    "rgb-osu": "./bin/run"
+  },
   "scripts": {
-    "build": "rimraf dist && tsc -p ./tsconfig.build.json",
+    "build": "rimraf lib && tsc -p ./tsconfig.build.json",
     "dev": "ts-node ./src/index.ts",
     "prepublish": "npm run build",
     "test": "jest"
+  },
+  "oclif": {
+    "bin": "rgb-osu"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
@@ -24,6 +31,13 @@
     "typescript": "^3.0.1"
   },
   "dependencies": {
+    "@oclif/command": "^1.5.8",
+    "@oclif/config": "^1.10.4",
+    "@oclif/plugin-help": "^2.1.4",
     "osu-json-parser": "^1.1.1"
-  }
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ]
 }
