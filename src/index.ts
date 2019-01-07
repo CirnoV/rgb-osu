@@ -5,7 +5,9 @@ import parseRGB from "./parseRGB";
 
 const rl = readline.createInterface({
   input: fs.createReadStream(
-    "data/cosMo@BousouP feat.Hatsune Miku - Hatsune Miku no Shoushitsu (val0108) [Extra].osu",
+    // "data/cosMo@BousouP feat.Hatsune Miku - Hatsune Miku no Shoushitsu (val0108) [Extra].osu",
+    // "data/Omoi - Teo (Kroytz) [Motto!].osu",
+    "data/Dark PHOENiX - Stirring an Autumn Moon (_lolipop) [Crazy Moon].osu",
   ),
 });
 
@@ -16,5 +18,8 @@ rl.on("line", (line) => {
 });
 
 rl.on("close", () => {
-  parseRGB(parser.toJSON());
+  const scripts = parseRGB(parser.toJSON());
+  fs.writeFileSync("result.txt", scripts.join("\n"));
+  console.log(scripts);
+  // fs.writeFileSync("result.json", JSON.stringify(parser.toJSON(), null, 2));
 });
