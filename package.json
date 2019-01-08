@@ -1,6 +1,6 @@
 {
   "name": "rgb-osu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": "https://github.com/CirnoV/rgb-osu",
   "author": "CirnoV <cirnov59@gmail.com>",
   "main": "lib/index.js",
