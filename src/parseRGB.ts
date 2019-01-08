@@ -13,7 +13,7 @@ function makePawnFunction(name: string, musicScripts: string[], musicExt: string
   scripts.push("");
   scripts.push(`public void Start_${name}()`);
   scripts.push("{");
-  scripts.push(`  StartMusic(${(0).toFixed(1)}, "${name}.${musicExt}");`);
+  scripts.push(`  StartMusic(${rgbDelay}, "${name}.${musicExt}");`);
   scripts.push(musicScripts.map((str) => `  ${str}`).join("\n"));
   scripts.push("}");
   return scripts.join("\n");
