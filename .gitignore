@@ -8,7 +8,7 @@
 /data
 
 # production
-/dist
+/lib
 /result
 
 # misc
